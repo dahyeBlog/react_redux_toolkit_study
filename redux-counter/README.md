@@ -38,7 +38,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-<span style="color:red">import {Provider} from 'react-redux'</span>
+import {Provider} from 'react-redux'
 // Provider 구성요소는 store를 리덕스 저장소에 액세스해야하는 모든 중첩된 구성 요소에 전달한다. 
 import store from './store/store';
 
@@ -117,7 +117,7 @@ function App() {
   const decrement = () => {
     dispatch({type:'DEC'})
   }
-  
+
   const addBy = () => {
     // payload안에 전달하고자 하는 state의 값을 넣는다. 
     dispatch({type:'ADD', payload: 10})
