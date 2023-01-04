@@ -9,6 +9,7 @@
 - useSelector를 사용한 함수에서 리덕스 스토어의 상태값이 바뀐 경우 바뀐 스토어의 상태값을 다시 가져와 컴포넌트를 렌더링 시킨다.
 
 ```
+
 const fruitList = useSelector(state => state.모듈명.요소);
 ```
 
