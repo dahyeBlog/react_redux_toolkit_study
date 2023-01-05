@@ -17,6 +17,9 @@ const Header = () => {
           <li>
             <Cart />
           </li>
+          <li>
+            <button>Logout</button>
+          </li>
         </ul>
       </nav>
     </header>
