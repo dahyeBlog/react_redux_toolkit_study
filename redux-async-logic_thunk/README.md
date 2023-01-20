@@ -39,10 +39,10 @@ export default loggerMiddleware;
 - 리덕스 미들웨어를 통해 비동기 작업을 처리할 때 사용하는 미들웨어는 대표적으로 redux-thunk, redux-saga 등이 있다. 
 
 ### 기존 리덕스의 흐름
-<img src="../Img/workflow.png">
+<img src="./src/Img/workflow.png">
 
 ### 비동기 작업을 위해 미들웨어가 추가된 리덕스의 흐름
-<img src="../Img/middleWork.png">
+<img src="./src/Img/middleWork.png">
 
 
 ## redux-thunk란
