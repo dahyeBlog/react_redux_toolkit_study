@@ -4,7 +4,7 @@
 ## 설치하기
 - npm install @reduxjs/toolkit react-redux
 - npm i date-fns // JS 날짜 라이브러리 중 다양한 형식을 제공
-
+- npm i axios // Node.js와 브라우저를 위한 Promise API를 활용하는 HTTP 통신 라이브러리이다. 비동기로 HTTP 통신을 할 수 있으며 return을 promise 객체로 해주기 때문에 response 데이터를 다루기 쉽다.
 
 ## 미들웨어란?
 - Redux에 임의의 기능을 넣어 확장하는 방법으로는 미들웨어를 추천한다.
@@ -53,6 +53,16 @@ export default loggerMiddleware;
 ## redux-thunk란
 - 리덕스를 사용하는 어플리케이션에서 비동기 작업을 처리 할 때 가장 기본적인 방법으로는 redux-thunk 라는 미들웨어를 사용하는 것이다. 
 
+## thunk란?
+- 리덕스 미들웨어가 그 함수를 전달 받아 store의 dispatch와 getState를 파라미터로 넣어 호출하는 것.
+- 예시 thunk 함수
+
+```
+        const sampleThunk = () => (dispatch, getState) => {
+        	// 현재 상태 참조 가능
+        	// 새 액션 디스패치 가능
+        }
+```
 
 ## immer.js
 - immer라는 라이브러리를 사용하면, 우리가 상태를 업데이트 할 때, 불변성을 신경쓰지 않으면서 업데이트 해주면 immer가 불변성 관리를 대신 해준다. 
@@ -71,8 +81,4 @@ console.log(Object.entries(person))
 
 Object.entries(person).forEach(([key,value]) => console.log(key, value))
 
-```
-name lee
-age 30
-```
 ```
