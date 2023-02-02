@@ -6,3 +6,4 @@
 - npm i react-router-dom
 - npm i react-redux     
 - npm i redux     
+
