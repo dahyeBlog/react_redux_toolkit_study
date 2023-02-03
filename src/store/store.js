@@ -2,16 +2,35 @@ import { createStore } from "redux";
 
 // counterReducer를 설정해야함. 첫번째 변수로 현재상태인 state 값 설정, 아래에는 카운터의 기본 값을 counter: 0 으로 지정함.
 // 두번째 변수로 디스패치 된 값을 받아온다.
-const counterReducer = (state = {counter: 0}, action) => {
+
+const initialState = {counter: 0, showCounter: true }
+
+const counterReducer = (state = initialState, action) => {
   if(action.type === 'increment') {
     return {
-      counter : state.counter + 1
+      counter : state.counter + 1,
+      showCounter: state.showCounter
+    }
+  }
+
+  if(action.type === 'increase') {
+    return {
+      counter : state.counter + action.amount,
+      showCounter: state.showCounter
     }
   }
 
   if(action.type === 'decrement') {
     return {
-      counter: state.counter - 1
+      counter: state.counter - 1,
+      showCounter: state.showCounter
+    }
+  }
+
+  if(action.type === 'toggle') {
+    return {
+      showCounter: !state.showCounter,
+      counter: state.counter
     }
   }
 
