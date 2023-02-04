@@ -4,6 +4,7 @@ import classes from "./Counter.module.css";
 // useSelector 훅은 store가 관리하는 상태(state)부분을 우리가 자동으로 선택할 수 있다.
 // 만일 클래스 기방 컴포넌트를 사용하고, 거기에는 connect 함수를 사용한다.
 import { useSelector, useDispatch, connect } from "react-redux";
+import { counterActions } from "../store/store";
 
 const Counter = () => {
   // useDispatch 훅을 사용해 redux store에 대한 action을 보낸다.
@@ -15,25 +16,47 @@ const Counter = () => {
   const counter = useSelector((state) => state.counter);
   const show = useSelector((state) => state.showCounter);
 
+
   const incrementHandler = () => {
-    // dispatch 함수를 사용해 새로운 action을 보내기
-    dispatch({type: "increment"})
+    dispatch(counterActions.increment())
   }
 
   const increaseHandler = () => {
-    // dispatch 함수를 사용해 새로운 action을 보내기
-    dispatch({type: "increase", amount: 5 })
+    dispatch(counterActions.increase(5))
   }
 
   const decrementHandler = () => {
-    // dispatch 함수를 사용해 새로운 action을 보내기
-    dispatch({type: "decrement"})
+    dispatch(counterActions.decrement())
   }
 
 
   const toggleCounterHandler = () => {
-    dispatch({type:'toggle'})
+    dispatch(counterActions.toggleCounter())
   };
+
+  
+
+
+
+  // const incrementHandler = () => {
+  //   // dispatch 함수를 사용해 새로운 action을 보내기
+  //   dispatch({type: "increment"})
+  // }
+
+  // const increaseHandler = () => {
+  //   // dispatch 함수를 사용해 새로운 action을 보내기
+  //   dispatch({type: "increase", amount: 5 })
+  // }
+
+  // const decrementHandler = () => {
+  //   // dispatch 함수를 사용해 새로운 action을 보내기
+  //   dispatch({type: "decrement"})
+  // }
+
+
+  // const toggleCounterHandler = () => {
+  //   dispatch({type:'toggle'})
+  // };
 
   return (
     <main className={classes.counter}>
