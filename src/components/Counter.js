@@ -4,7 +4,7 @@ import classes from "./Counter.module.css";
 // useSelector 훅은 store가 관리하는 상태(state)부분을 우리가 자동으로 선택할 수 있다.
 // 만일 클래스 기방 컴포넌트를 사용하고, 거기에는 connect 함수를 사용한다.
 import { useSelector, useDispatch, connect } from "react-redux";
-import { counterActions } from "../store/store";
+import { counterActions } from "../store/counter-slice";
 
 const Counter = () => {
   // useDispatch 훅을 사용해 redux store에 대한 action을 보낸다.
@@ -13,8 +13,8 @@ const Counter = () => {
   // useSelector로 store의 현재 상태 데이터 값 가져오기.
   // 리덕스 저장소에서 데이터가 변경될 때마다 자동으로 업데이트 되고 최신 카운터를 받게 된다.
   // 데이터 값이 변경되면 이 컴포넌트 함수가 재실행된다. 즉, 항상 최신 카운터를 갖게 된다.
-  const counter = useSelector((state) => state.counter);
-  const show = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const show = useSelector((state) => state.counter.showCounter);
 
 
   const incrementHandler = () => {
